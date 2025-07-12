@@ -1,0 +1,38 @@
+FUNCTION dot_product(v1, v2) : INTEGER
+VAR
+     PS : INTEGER = 0;
+     i : INTEGER = 0;
+
+BEGIN
+     FOR i FROM 0 TO v1.lenght - 1 STEP 1 DO
+          PS = PS + (v1[i] * v2[i]);
+     END_FOR
+        RETURN PS;
+END_FUNCTION
+
+
+
+
+ALGORITHM orthogonalcharacterchecker
+VAR
+    N : INTEGER;
+    V1 : ARRAY_OF type[lenght];
+    V2 : ARRAY_OF type[lenght];
+    PS : INTEGER;
+
+    BEGIN
+         read(N)
+
+        FOR i FROM 0 TO N STEP 1 DO
+            read[v1];
+            read[v2];
+            PS = dot_product(v1, v2);
+
+            IF (PS = 0) THEN
+                write("Vectors are orthogonal");
+            ELSE
+                write("Vectors are not orthogonal");
+            ENDIF
+        END_FOR
+    END_ALGORITHM
+         

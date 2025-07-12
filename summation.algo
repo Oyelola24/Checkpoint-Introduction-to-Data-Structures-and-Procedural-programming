@@ -1,0 +1,42 @@
+ALGORITHM summationofdistinctelementsinanarray
+VAR
+   cell1 : ARRAY_OF INTEGER;[3,1,7,9];
+   cell2 : ARRAY_OF INTEGER;[2,4,1,7,9];
+   darr : ARRAY_OF INTEGER[];
+   i = integer=0;
+   j = integer=0;
+   sum: INTEGER=0;
+   duplicate: BOOLEAN
+
+BEGIN
+     FOR i FROM 0 TO cell1.lenght-1 STEP 1 DO
+          duplicate = FALSE;
+          FOR j FROM 0 TO cell2.lenght-1 STEP 1 DO
+               IF cell1[i] = cell2[j] THEN
+                    duplicate = TRUE;
+                    BREAK;
+               ENDIF
+          END_FOR
+
+          IF (duplicate = FALSE) THEN
+               darr[darr.lenght] = cell1[i];
+                sum = sum + cell1[i];
+            ENDIF
+            END_FOR
+
+        FOR i FROM 0 TO cell2.lenght-1 STEP 1 DO
+            duplicate = FALSE;
+            FOR j FROM 0 TO darr.lenght-1 STEP 1 DO
+                IF cell2[i] = darr[j] THEN
+                    duplicate = TRUE;
+                    BREAK;
+                ENDIF
+            END_FOR
+
+            IF (duplicate = FALSE) THEN
+                darr[darr.lenght] = cell2[i];
+                sum = sum + cell2[i];
+            ENDIF
+            END_FOR
+            write(sum)
+END_ALGORITHM
